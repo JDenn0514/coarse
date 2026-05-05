@@ -21,6 +21,7 @@ classifiers = [
 dependencies = [
     "litellm>=1.83.0",
     "instructor>=1.15.1",
+    "mcp>=1.0",
     "pydantic>=2.0",
     "typer>=0.12",
     "rich>=13.0",
@@ -45,6 +46,7 @@ dev = ["pytest>=8.0", "ruff>=0.4"]
 [project.scripts]
 coarse = "coarse.cli:app"
 coarse-ink = "coarse.cli:app"
+coarse-mcp = "coarse.mcp_server:main"
 coarse-review = "coarse.cli_review:main"
 
 [tool.hatch.build.targets.wheel]
@@ -61,3 +63,4 @@ select = ["E", "F", "I", "W"]
 testpaths = ["tests"]
 addopts = "-m 'not slow'"
 markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
+
